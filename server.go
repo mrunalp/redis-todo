@@ -56,7 +56,7 @@ func main() {
 
 	go AddTaskProc(ch)
 
-	m.Use(render.Renderer())
+	m.Use(render.Renderer(render.Options{Directory: "/root/gosrc/src/github.com/mrunalp/redis-todo/templates"}))
 
 	m.Get("/", func() string {
 		return "Hello Martini!"
